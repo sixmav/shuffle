@@ -4,7 +4,7 @@
 <img src="https://ibb.co.com/TPkNwQJ" alt="name" />
 <p/>
 
-<h4 align="center">Shuffle Projects/h4>
+<h4 align="center">Shuffle Projects</h4>
 
 <p align="center">
 <a href="https://github.com/atapas/model-repo/blob/master/LICENSE" target="blank">
