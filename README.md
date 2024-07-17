@@ -77,7 +77,6 @@ PostgreSQL, ensuring ACID compliance and advanced querying capabilities.
 
 
 
-
 # 🛡️ License
 
 This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
@@ -92,9 +91,6 @@ If you find something is missing, `Shuffle` is listening. Please create a featur
 
 # 🤝 Contributing to `shuffle`
 
-Any kind of positive contribution is welcome! Please help us to grow by contributing to the project.
-
-If you wish to contribute, you can work on any features [listed here](https://github.com/atapas/model-repo#-upcoming-features) or create one on your own. After adding your code, please send us a Pull Request.
-
 > Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
+
 
