@@ -1,7 +1,7 @@
 # Shuffle
 
 <p align="center">
-<img src="https://i.postimg.cc/xJMmV2yw/Shuffle-MVP-Requirement.png" alt="name" />
+<img src="https://ibb.co.com/TPkNwQJ" alt="name" />
 <p/>
 
 <h4 align="center">Shuffle Projects/h4>
