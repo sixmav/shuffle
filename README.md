@@ -1,7 +1,7 @@
 # Shuffle
 
 <p align="center">
-<img src="https://postimg.cc/xJMmV2yw" alt="name"/>
+<img src="https://postimg.cc/xJMmV2yw" alt="name" />
 <p/>
 
 <h4 align="center">Shuffle Projects/h4>
