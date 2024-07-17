@@ -15,11 +15,7 @@
 <img src="https://img.shields.io/github/issues-pr/atapas/model-repo?style=flat-square" alt="tryshape pull-requests"/>
 </a>
 
-<p align="center">
-    <a href="https://github.com/TryShape/tryshape/issues/new/choose">Report Bug</a>
-    ·
-    <a href="https://github.com/TryShape/tryshape/issues/new/choose">Request Feature</a>
-</p>
+
 
 # 👋 Introducing `Shuffle`
 
