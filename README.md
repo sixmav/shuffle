@@ -30,9 +30,7 @@ The objective of the `Shuffle` MVP is to validate the market need for a nightlif
 
 # 🚀 Design
 
-Here is a design of the app. We hope you enjoy it.
-
-https://www.figma.com/design/SJ1JLMf0q0tnFHKbyw9kbw/Shuffle?node-id=1%3A801&t=BuDnEakUxVAcD5O5-1
+Here is the [🎨 Figma](https://www.figma.com/design/SJ1JLMf0q0tnFHKbyw9kbw/Shuffle?node-id=1%3A801&t=BuDnEakUxVAcD5O5-1) design of the app. We hope you enjoy it.
 
 
 
