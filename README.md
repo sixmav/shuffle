@@ -83,7 +83,7 @@ PostgreSQL, ensuring ACID compliance and advanced querying capabilities.
 This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
 
 
-If you find something is missing, `model-repo` is listening. Please create a feature request [from here](https://github.com/atapas/model-repo/issues/new/choose).
+If you find something is missing, `Shuffle` is listening. Please create a feature request [from here](https://github.com/atapas/model-repo/issues/new/choose).
 
 # 🏃‍♀️ Deploy
 
