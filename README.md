@@ -1,10 +1,10 @@
-# model-repo
+# Shuffle
 
 <p align="center">
-<img src="https://res.cloudinary.com/atapas/image/upload/v1632156569/demos/GitHub-Projects_tyxnkl.png" alt="name"/>
+<img src="https://postimg.cc/xJMmV2yw" alt="name"/>
 <p/>
 
-<h4 align="center">Best practices to gain maximum engagements, contributions, and acknowledgements(like stars, sponsors)</h4>
+<h4 align="center">Shuffle Projects/h4>
 
 <p align="center">
 <a href="https://github.com/atapas/model-repo/blob/master/LICENSE" target="blank">
