@@ -1,39 +1,35 @@
-use std::{env, io};
+#[macro_use]
+extern crate diesel;
 
-use actix_cors::Cors;
-use actix_web::{get, http, App, HttpResponse, HttpServer, Responder};
+#[macro_use]
+extern crate log;
 
-#[get("/")]
-async fn hello() -> impl Responder {
-    HttpResponse::Ok().body("Hello world!")
-}
+use actix_web::middleware::Logger;
+use actix_web::{App, HttpServer};
+mod app;
+mod constants;
+mod error;
+mod schema;
+mod utils;
 
-#[actix_rt::main]
-async fn main() -> io::Result<()> {
-    dotenv::dotenv().expect("Failed to read .env file");
-    env::set_var("RUST_LOG", "actix_web=debug");
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    println!("Starting server...");
+    std::env::set_var("RUST_LOG", "actix_web=trace");
     env_logger::init();
 
-    let app_host = env::var("APP_HOST").expect("APP_HOST not found.");
-    let app_port = env::var("APP_PORT").expect("APP_PORT not found.");
-    let app_url = format!("{}:{}", &app_host, &app_port);
+    let state = {
+        let pool = utils::db::establish_connection();
+        use app::drivers::middlewares::state::AppState;
+        AppState::new(pool)
+    };
 
     HttpServer::new(move || {
         App::new()
-            .wrap(
-                Cors::default() // allowed_origin return access-control-allow-origin: * by default
-                    .allowed_origin("http://127.0.0.1:3000")
-                    .allowed_origin("http://localhost:3000")
-                    .send_wildcard()
-                    .allowed_methods(vec!["GET", "POST", "PUT", "DELETE"])
-                    .allowed_headers(vec![http::header::AUTHORIZATION, http::header::ACCEPT])
-                    .allowed_header(http::header::CONTENT_TYPE)
-                    .max_age(3600),
-            )
-            .wrap(actix_web::middleware::Logger::default())
-            .service(hello)
+            .wrap(Logger::default())
+            .app_data(actix_web::web::Data::new(state.clone()))
     })
-    .bind(&app_url)?
+    .bind(constants::BIND)?
     .run()
     .await
 }
