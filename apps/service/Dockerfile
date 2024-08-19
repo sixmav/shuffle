@@ -1,38 +1,18 @@
-FROM rust:slim as build
+FROM rust:1.74-slim
 
-RUN apt-get update; \
-  apt-get install --no-install-recommends -y libpq-dev libsqlite3-dev; \
-  rm -rf /var/lib/apt/lists/*; \
-  USER=root cargo new --bin app
 WORKDIR /app
 
-COPY ./Cargo.toml ./Cargo.toml
+COPY . .
 
-RUN cargo build; \
-  rm src/*.rs
+# Upgrade the system and install dependencies for PostgreSQL
+RUN apt-get update && \
+  apt-get upgrade -y -o DPkg::Options::=--force-confold && \
+  apt-get install -y -o DPkg::Options::=--force-confold \
+  curl unzip build-essential pkg-config libssl-dev \
+  postgresql-client libpq-dev
 
-COPY ./src ./src
-# COPY ./migrations ./migrations
-COPY ./diesel.toml .
+# Install cargo-watch
+RUN cargo install cargo-watch
 
-RUN touch .env; 
-
-RUN rm ./target/debug/deps/service; \
-  cargo build --release
-
-FROM debian:buster-slim
-
-RUN mkdir app
-WORKDIR /app
-
-RUN apt-get update; \
-  apt-get install --no-install-recommends -y libpq5 libsqlite3-0; \
-  rm -rf /var/lib/apt/lists/*
-
-COPY --from=build /app/target/release/service .
-COPY --from=build /app/.env .
-COPY --from=build /app/diesel.toml .
-
-EXPOSE 8000
-
-CMD ["/app/service"]
+# Install diesel_cli for PostgreSQL
+RUN cargo install diesel_cli --no-default-features --features "postgres"
